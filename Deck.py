@@ -2,6 +2,9 @@ import random
 import Card
 
 class Deck:
+    '''
+    This class represents a Deck object. A Deck is comprised of 52 Card objects.
+    '''
 
     def __init__(self, num_of_decks = 0):
         '''

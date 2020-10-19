@@ -1,36 +1,18 @@
-import Deck
-
 class Table:
+    '''
+    This class represents a Table object. A Table has cards 
+    that are currently in play.
+    '''
 
     def __init__(self):
         '''
-        Sets the cards_on_table and pot 
+        Sets the cards_on_table
 
         Attributes:
         cards_on_table (list): the cards value
-        pot (int): the pot value 
         '''
         self.cards_on_table = []
-        self.pot = 0 
-    
-    def get_pot(self):
-        '''
-        Returns the pot on table
-
-        Returns:
-        pot (int): the pot currently on table
-        '''
-        return self.pot
-
-    def set_pot(self, pot):
-        '''
-        Sets the pot on table
-
-        Parameter:
-        pot (int): the pot value being set 
-        '''
-        self.pot = pot
-    
+        
     def get_cards_on_table(self):
         '''
         Gets the cards currently on table
@@ -61,13 +43,12 @@ class Table:
         deck.set_cards_in_deck(cards)
         deck.set_cards_not_in_deck([])
         deck.shuffle()
-        self.pot = 0
     
     def __str__(self):
         '''
-        Returns string representation of cards_on_table and pot 
+        Returns string representation of cards_on_table
 
         Returns:
-        (str): string of cards_on_table and pot
+        (str): string of cards_on_table
         '''
-        return 'Cards on table: ' + str(self.cards_on_table) + '\nPot on table: ' + str(self.pot)
+        return 'Cards on table: ' + str(self.cards_on_table)
