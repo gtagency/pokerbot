@@ -21,9 +21,10 @@ class Agent:
         Returns:
         (str): string of the number and suit for every card in hand
         '''
+        hand_str = ''
         for card in self.hand:
-            hand += str(card) + " "
-        return "Hand: " + hand        
+            hand_str += str(card) + ", "
+        return "Hand: " + hand_str      
     
     def get_hand(self):
         '''
@@ -35,13 +36,14 @@ class Agent:
         return self.hand
 
     def set_hand(self, hand):
-        self.hand = hand
         '''
         Sets the hand of the agent
 
         Parameter:
         hand (list): the hand
         '''
+        self.hand = hand
+        
 
     def hit(self, deck):
         self.hand.append(deck.draw())

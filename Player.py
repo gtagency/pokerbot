@@ -1,4 +1,6 @@
-class Player(Agent):
+from Agent import Agent as Parent
+
+class Player(Parent):
     '''
     This class represents a Player object and extends the Agent
     class. Each Player has their own pot which is affected by the
@@ -24,7 +26,7 @@ class Player(Agent):
         Returns:
         (str): string of the number and suit for every card in hand
         '''
-        return super().__str__() + "\nPot: " + str(self.pot) + "\n Amount of Cash: " + str(self.amount_cash)
+        return super().__str__() + "\nPot: " + str(self.pot) + "\nAmount of Cash: " + str(self.amount_cash)
 
     def get_pot(self):
         '''
@@ -42,7 +44,7 @@ class Player(Agent):
         Returns:
         amount_cash (float): the player's remaining cash
         '''
-        return self.pot
+        return self.amount_cash
 
     def set_pot(self, pot):
         '''
@@ -53,14 +55,14 @@ class Player(Agent):
         '''
         self.pot = pot
 
-    def get_amount_cash(self):
+    def set_amount_cash(self, amount_cash):
         '''
-        Returns the player's current pot
+        Sets the player's remaining cash
 
-        Returns:
-        pot (float): the player's current pot
+        Parameter:
+        amount_cash (float): the player's remaining cash
         '''
-        return self.pot
+        self.amount_cash = amount_cash
 
     def bet(self, bet):
         '''
@@ -71,5 +73,4 @@ class Player(Agent):
         '''
         if bet <= self.amount_cash:
             self.pot += bet
-            self.amount_cash -= bet
-                        
+            self.amount_cash -= bet                

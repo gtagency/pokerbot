@@ -1,4 +1,6 @@
-class Dealer(Agent):
+from Agent import Agent as Parent
+
+class Dealer(Parent):
     '''
     This class represents a Dealer object and extends the Agent
     class. Each dealer can deal, collect, or payout.
@@ -18,8 +20,8 @@ class Dealer(Agent):
         player (Player): the player being dealt a card
         deck (Deck): the deck being played
         '''
-        card = deck.draw()
-        player.set_hand(player.get_hand().append(card))
+        player_card = deck.draw()
+        player.get_hand().append(player_card)
 
     def collect(self, player):
         '''
